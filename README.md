@@ -14,7 +14,7 @@
 
 下落方块：方块有7个种类，都是通过4个小方块（30px x 30px 的div）构成。其活动区域为[0,9]和[0,19]，通过 css 样式设置颜色，如下表示：
 
-```
+``` javascript
 [
     { x: 4, y: 0, className: "current_0" },
     { x: 3, y: 0, className: "current_0" },
@@ -28,7 +28,7 @@
 
 旋转方块：通过公式旋转，以上文的坐标案例演示：
 
-```
+``` javascript
 this.current = [
     { x: 4, y: 0, className: "current_0" },
     { x: 3, y: 0, className: "current_0" },
@@ -76,7 +76,7 @@ DOM操作、面向对象、事件操作和间隔函数 setInterval
 ### 3.2 初始化地图
 map.js 文件
 
-```
+``` javascript
 var Map = function(square) {
     // 边界
     this.minX = this.minY = 0;
@@ -179,7 +179,7 @@ Map.prototype._refreshMap = function() {
 ### 3.3 创建方块
 square.js 文件
 
-```
+``` javascript
 // 方块由4个小方块组成
 var Square = function(info) {
     this.info = info;
@@ -262,7 +262,7 @@ Square.prototype._getSquareType = function() {
 ### 3.4 移动方块
 square.js 文件
 
-```
+``` javascript
 // 移动方块
 Square.prototype._move = function(moveX, moveY, map) {
     for (var i = 0; i < this.current.length; i++) {
@@ -299,7 +299,7 @@ Square.prototype.fastDown = function(map) {
 ### 3.5 旋转方块
 square.js 文件
 
-```
+``` javascript
 // 旋转
 Square.prototype.round = function(map) {
     // 田字方块不用旋转
@@ -324,7 +324,7 @@ Square.prototype.round = function(map) {
 ### 3.6 消行
 square.js 文件
 
-```
+``` javascript
 // 向下移动
 Square.prototype.moveDown = function(map) {
     if (this._move(0, 1, map)) {
@@ -373,7 +373,7 @@ Square.prototype._isCanRemoveLine = function(row, map) {
 ### 3.7 启动游戏
 game.js 文件
 
-```
+``` javascript
 var Game = function() {
     this.info = null;
     this.square = null;
