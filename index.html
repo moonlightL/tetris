@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>俄罗斯方块</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="map" class="map"><div id="shadow" class="shadow"></div></div>
+        <div id="next" class="next"></div>
+        <div class="info">
+            <div>已用时：<span id="time"></span>秒</div>
+            <div>已得分：<span id="score"></span>分</div>
+        </div>
+        <div class="btn">
+            <button type="button" id="startBtn">开始游戏</button>
+            <button type="button" id="pauseBtn" style="display: none">暂停游戏</button>
+        </div>
+        <div class="intro">
+            <p>方向控制：←、↑、↓、→</p>
+            <p>坠落控制：Space（空格键）</p>
+            <p>阴影提示：L 键</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/info.js"></script>
+    <script type="text/javascript" src="js/square.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+</body>
+</html>

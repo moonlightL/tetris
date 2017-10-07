@@ -1,0 +1,125 @@
+html,body {
+    background: url("../img/bg.jpg") no-repeat center center
+}
+
+.container {
+    position: relative;
+    margin: 50px auto;
+    padding:0;
+    text-align: center;
+}
+
+.container>div {
+    display: inline-block;
+}
+
+.map {
+    position: relative;
+
+    width: 300px;
+    height: 600px;
+
+    background-color: #F2FAFF;
+    border: 2px solid blue;
+    border-top: 0;
+
+    overflow: hidden;
+}
+
+.map .shadow {
+    position: absolute;
+    background-color: #A6A6F3;
+    height:600px;
+    z-index: 100;
+    opacity: .3;
+}
+
+.next {
+    position: absolute;
+
+    width: 150px;
+    height: 80px;
+    margin-left : 50px;
+
+    background-color: #F2FAFF;
+    border: 1px solid blue;
+}
+
+.info {
+    position: absolute;
+    margin-left : 50px;
+    margin-top:100px;
+}
+
+.btn {
+    position: absolute;
+    margin-left : 50px;
+    margin-top:200px;
+}
+
+.intro {
+     position: absolute;
+    margin-left : 50px;
+    margin-top:250px;
+    text-align: left;
+}
+
+.none,
+.current_0,.current_1,.current_2,.current_3, .current_4, .current_5, .current_6,
+.done,.over {
+    position: absolute;
+    box-sizing: border-box;
+
+    width: 30px;
+    height: 30px;
+}
+
+/* 默认 */
+.none {
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+/* 当前下落方块 */
+.current_0 {
+    background-color: pink;
+    border: 1px solid red;
+}
+
+.current_1 {
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+.current_2 {
+    background-color: #F1F111;
+    border: 1px solid #D7D709;
+}
+
+.current_3 {
+    background-color: #2E52E6;
+    border: 1px solid #1535B6;
+}
+.current_4 {
+    background-color: #EF781F;
+    border: 1px solid #C65B0C;
+}
+.current_5 {
+    background-color: #F078DF;
+    border: 1px solid #D424BA;
+}
+.current_6 {
+    background-color: #B71DDE;
+    border: 1px solid #831A9E;
+}
+
+/* 下落完成的方块 */
+.done {
+    background-color: gray;
+    border: 1px solid #514F4F;
+}
+
+.over {
+    background-color: #222122;
+    border: 1px solid #000;
+}
