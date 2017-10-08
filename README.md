@@ -4,15 +4,15 @@
 ## 二、项目介绍
 
 ### 2.1 效果展示
-![](http://ow97db1io.bkt.clouddn.com/tetris.gif)
+![](http://ow97db1io.bkt.clouddn.com/tetris-1.gif)
  
 ### 2.2 实现思路
 
-地图：方块活动的地图大小已经通过 css 样式确定（300px x 600px）。
+1) 地图：大小已经通过 css 样式确定（300px x 600px）。
 
-堆积方块：创建N个小方块（30px x 30px 的div），填充（通过二维数组存放）到地图中。通过 css 样式区分堆积的方块和可活动的区域。
+2) 堆积方块：创建 200 个小方块（30px x 30px 的div），填充（通过二维数组存放）到地图中。通过 css 样式区分堆积的方块（done）和可活动的区域（none）。
 
-下落方块：方块有7个种类，都是通过4个小方块（30px x 30px 的div）构成。其活动区域为[0,9]和[0,19]，通过 css 样式设置颜色，如下表示：
+3) 下落方块：方块有7个种类，都是通过4个小方块（30px x 30px 的div）构成。其横向活动区域为[0,9]，纵向活动区域为[0,19]，通过 css 样式设置颜色，如下表示：
 
 ``` javascript
 [
@@ -23,10 +23,14 @@
 ]
 ```
 
+坐标图表示如下：
 
-移动方块：通过设置 position: absolute ,再动态设置 top 和 left 即可。
+![image](http://ow97db1io.bkt.clouddn.com/tetris-3.jpg)
 
-旋转方块：通过公式旋转，以上文的坐标案例演示：
+
+4) 移动方块：通过设置 position: absolute ,再动态设置 top 和 left 即可。
+
+5) 旋转方块：通过公式旋转，以上文的坐标案例演示：
 
 ``` javascript
 this.current = [
@@ -45,9 +49,9 @@ for (var j = 1; j < this.current.length; j++) {
 
 ```
 
-消行：通过切换样式消除行，下文具体介绍。
+6) 消行：通过切换样式实现，具体内容下文介绍。
 
-动态效果：通过 setInterval 不断刷新页面（调用 map 对象的 _refreshMap 方法改变方块位置）。
+7) 动态效果：通过 setInterval 不断刷新页面（调用 map 对象的 _refreshMap 方法改变方块位置）。
 
 ### 2.3 设计技术点
 DOM操作、面向对象、事件操作和间隔函数 setInterval
@@ -60,17 +64,19 @@ DOM操作、面向对象、事件操作和间隔函数 setInterval
 
 ### 3.1 css 样式介绍
 
-.none 表示地图中的活动区域
+none 表示地图中的活动区域样式
 
-.current 开头的样式表示当前活动的方块样式
+current 开头的表示当前活动的方块样式
 
-.done 表示堆积的方块样式
+done 表示堆积的方块样式
 
-游戏开始时，地图（300px x 600px）被 200 个小方块（30px x 30px 的div）填充。其样式为 .none。
+游戏开始时，地图（300px x 600px）被 200 个小方块（30px x 30px 的div）填充，其 class 为 none。
 
-当前方块在地图中下落时，样式为 .current 开头的类样式
+当前方块在地图中下落时，设置 class 为 current 开头的样式。
 
-当方块不能下落要堆积时，将其在地图当前区域的div 样式由 .none 改成 .done。
+当方块不能下落要堆积时，将其在地图当前区域的 div 样式由 none 改成 done。
+
+当方块消行时，遍历所有行，设置当前行的样式为上一行的样式。
 
 
 ### 3.2 初始化地图
