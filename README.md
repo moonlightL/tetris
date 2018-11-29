@@ -1,10 +1,12 @@
 ## 一、背景
-在网上能查找到通过 Javascript 编写俄罗斯方块的资料，而且更牛的是只需要不到百行的代码就实现了，笔者非常佩服这些牛人。佩服之余，笔者也想尝试通过 Javascript 编写俄罗斯方块。在翻阅网上的资料和代码中，发现这些代码的可读性不高，因此不能让读者很好地去理解和学习代码。因此，笔者通过本文介绍自己如何通过面向对象的思想实现代码功能。
+在网上能查找到通过 Javascript 编写俄罗斯方块的资料，而且更牛的是只需要不到百行的代码就实现了，笔者非常佩服这些牛人。佩服之余，笔者也想尝试通过 Javascript 编写俄罗斯方块。在翻阅网上的资料和代码中，发现这些代码的可读性不高，因此不能让读者很好地去理解和学习代码。因此，笔者通过本文介绍自己如何通过面向对象的思想实现该游戏。
 
 ## 二、项目介绍
 
 ### 2.1 效果展示
-![](http://ow97db1io.bkt.clouddn.com/tetris-1.gif)
+![](http://images.extlight.com/tetris-1.gif)
+
+<!-- more -->
  
 ### 2.2 实现思路
 
@@ -25,7 +27,7 @@
 
 坐标图表示如下：
 
-![image](http://ow97db1io.bkt.clouddn.com/tetris-3.jpg)
+![image](http://images.extlight.com/tetris-3.jpg)
 
 
 4) 移动方块：通过设置 position: absolute ,再动态设置 top 和 left 即可。
@@ -53,11 +55,11 @@ for (var j = 1; j < this.current.length; j++) {
 
 7) 动态效果：通过 setInterval 不断刷新页面（调用 map 对象的 _refreshMap 方法改变方块位置）。
 
-### 2.3 设计技术点
+### 2.3 涉及技术
 DOM操作、面向对象、事件操作和间隔函数 setInterval
 
 ### 2.4 项目结构
-![](http://ow97db1io.bkt.clouddn.com/tetris-1.jpg)
+![](http://images.extlight.com/tetris-1.jpg)
 
 ## 三、实现步骤
 由于逻辑较为复杂，代码编写较长，因此只演示关键代码。
