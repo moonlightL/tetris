@@ -4,7 +4,7 @@
 ## 二、项目介绍
 
 ### 2.1 效果展示
-![](http://images.extlight.com/tetris-1.gif)
+![](https://images.extlight.com/tetris-1.gif)
 
 <!-- more -->
  
@@ -27,7 +27,7 @@
 
 坐标图表示如下：
 
-![image](http://images.extlight.com/tetris-3.jpg)
+![image](https://images.extlight.com/tetris-3.jpg)
 
 
 4) 移动方块：通过设置 position: absolute ,再动态设置 top 和 left 即可。
@@ -59,7 +59,7 @@ for (var j = 1; j < this.current.length; j++) {
 DOM操作、面向对象、事件操作和间隔函数 setInterval
 
 ### 2.4 项目结构
-![](http://images.extlight.com/tetris-1.jpg)
+![](https://images.extlight.com/tetris-1.jpg)
 
 ## 三、实现步骤
 由于逻辑较为复杂，代码编写较长，因此只演示关键代码。
